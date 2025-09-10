@@ -1,0 +1,137 @@
+body {
+    font-family: 'Open Sans', sans-serif;
+    background-color: #0B1A26;
+    color: #ACCDD3;
+}
+
+h1,
+h2,
+h3,
+.font-montserrat {
+    font-family: 'Montserrat', sans-serif;
+}
+
+.font-anton {
+    font-family: 'Anton', sans-serif;
+    letter-spacing: 0.05em;
+}
+
+.lang-btn.active {
+    color: #40CAB1;
+    font-weight: bold;
+}
+
+.section-fade-in {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.section-fade-in.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.card-glow {
+    transition: box-shadow 0.3s ease-in-out, transform 0.3s ease-in-out;
+}
+
+.card-glow:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 0 20px rgba(64, 202, 177, 0.3), 0 0 40px rgba(64, 202, 177, 0.2);
+}
+
+#hero-canvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+}
+
+.cta-pulse {
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+        box-shadow: 0 0 0 0 rgba(64, 202, 177, 0.7);
+    }
+
+    70% {
+        transform: scale(1.05);
+        box-shadow: 0 0 0 10px rgba(64, 202, 177, 0);
+    }
+
+    100% {
+        transform: scale(1);
+        box-shadow: 0 0 0 0 rgba(64, 202, 177, 0);
+    }
+}
+
+/* Text Scroller Styles */
+.text-scroller {
+    max-width: 1100px;
+    margin: auto;
+    overflow: hidden;
+    position: relative;
+    -webkit-mask-image: linear-gradient(to right, transparent, white 15%, white 85%, transparent);
+    mask-image: linear-gradient(to right, transparent, white 15%, white 85%, transparent);
+}
+
+.text-scroller .text-track {
+    display: flex;
+    width: fit-content;
+    animation: scrollText 40s linear infinite;
+}
+
+.text-scroller:hover .text-track {
+    animation-play-state: paused;
+}
+
+.text-scroller .text-slide {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    font-size: 1.5rem;
+    /* 24px */
+    color: #ACCDD3;
+    opacity: 0.5;
+    padding: 0 40px;
+    white-space: nowrap;
+    transition: opacity 0.3s ease, color 0.3s ease;
+}
+
+.text-scroller .text-slide:hover {
+    opacity: 1;
+    color: #40CAB1;
+}
+
+@keyframes scrollText {
+    from {
+        transform: translateX(0%);
+    }
+
+    to {
+        transform: translateX(-50%);
+    }
+}
+
+/* Responsive adjustments */
+@media (max-width: 767px) {
+    .text-scroller .text-slide {
+        font-size: 1.25rem;
+        /* 20px */
+        padding: 0 25px;
+    }
+
+    .text-scroller .text-track {
+        animation-duration: 30s;
+    }
+
+    h1 {
+        font-size: 2.75rem;
+        /* Adjust h1 size on mobile */
+    }
+}

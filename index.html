@@ -1,0 +1,658 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Programa de Membros - Portal ERP</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Anton&family=Montserrat:wght@400;700;900&family=Open+Sans:wght@400;600&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="./assets/index.css">
+</head>
+
+<body class="antialiased">
+
+    <!-- Header -->
+    <header id="header"
+        class="bg-[#052B43]/80 backdrop-blur-md sticky top-0 z-50 transition-all duration-300 border-b border-white/10">
+        <div class="container mx-auto px-6 py-4">
+            <div class="flex items-center justify-between">
+                <div class="flex items-center space-x-4">
+                    <img src="https://email-editor-production.s3.amazonaws.com/images/3216/editor_images/Logo_Portal_ERP_5.png"
+                        alt="Portal ERP Logo" class="h-8 w-auto">
+                    <span class="text-lg font-semibold text-white font-montserrat hidden sm:block">
+                        <span class="lang lang-pt">Programa de Membros</span>
+                        <span class="lang lang-es hidden">Programa de Miembros</span>
+                        <span class="lang lang-en hidden">Members Program</span>
+                    </span>
+                </div>
+                <nav class="hidden md:flex items-center space-x-6">
+                    <a href="#programa" class="text-white hover:text-[#40CAB1] transition-colors"><span
+                            class="lang lang-pt">O Programa</span><span class="lang lang-es hidden">El
+                            Programa</span><span class="lang lang-en hidden">The Program</span></a>
+                    <a href="#como-funciona" class="text-white hover:text-[#40CAB1] transition-colors"><span
+                            class="lang lang-pt">Como Funciona</span><span class="lang lang-es hidden">Cómo
+                            Funciona</span><span class="lang lang-en hidden">How it Works</span></a>
+                    <a href="#planos" class="text-white hover:text-[#40CAB1] transition-colors"><span
+                            class="lang lang-pt">Planos</span><span class="lang lang-es hidden">Planes</span><span
+                            class="lang lang-en hidden">Plans</span></a>
+                    <a href="#cases" class="text-white hover:text-[#40CAB1] transition-colors">Cases</a>
+                    <a href="#contato"
+                        class="bg-[#40CAB1] text-[#052B43] px-4 py-2 rounded-xl font-bold hover:bg-opacity-90 transition-all">
+                        <span class="lang lang-pt">Seja um Membro</span>
+                        <span class="lang lang-es hidden">Sea un Miembro</span>
+                        <span class="lang lang-en hidden">Become a Member</span>
+                    </a>
+                </nav>
+                <div class="flex items-center space-x-4">
+                    <div id="language-switcher" class="text-sm text-gray-300 space-x-2">
+                        <button class="lang-btn active" data-lang="pt">PT</button>
+                        <span class="opacity-50">|</span>
+                        <button class="lang-btn" data-lang="es">ES</button>
+                        <span class="opacity-50">|</span>
+                        <button class="lang-btn" data-lang="en">EN</button>
+                    </div>
+                    <button id="mobile-menu-button" class="md:hidden text-white">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M4 6h16M4 12h16m-7 6h7"></path>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+            <!-- Mobile Menu -->
+            <div id="mobile-menu" class="hidden md:hidden mt-4">
+                <a href="#programa" class="block py-2 text-white hover:text-[#40CAB1]"><span class="lang lang-pt">O
+                        Programa</span><span class="lang lang-es hidden">El Programa</span><span
+                        class="lang lang-en hidden">The Program</span></a>
+                <a href="#como-funciona" class="block py-2 text-white hover:text-[#40CAB1]"><span
+                        class="lang lang-pt">Como Funciona</span><span class="lang lang-es hidden">Cómo
+                        Funciona</span><span class="lang lang-en hidden">How it Works</span></a>
+                <a href="#planos" class="block py-2 text-white hover:text-[#40CAB1]"><span
+                        class="lang lang-pt">Planos</span><span class="lang lang-es hidden">Planes</span><span
+                        class="lang lang-en hidden">Plans</span></a>
+                <a href="#cases" class="block py-2 text-white hover:text-[#40CAB1]">Cases</a>
+                <a href="#contato"
+                    class="block mt-2 bg-[#40CAB1] text-[#052B43] px-4 py-2 rounded-xl font-bold text-center">
+                    <span class="lang lang-pt">Seja um Membro</span>
+                    <span class="lang lang-es hidden">Sea un Miembro</span>
+                    <span class="lang lang-en hidden">Become a Member</span>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section
+            class="relative min-h-screen flex items-center justify-center text-center overflow-hidden bg-[#052B43]">
+            <canvas id="hero-canvas"></canvas>
+            <div class="absolute inset-0 bg-black/40 z-20"></div>
+            <div class="container mx-auto px-6 py-20 relative z-30">
+                <h1
+                    class="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-anton text-white uppercase tracking-wider leading-tight">
+                    <span
+                        class="block text-2xl md:text-4xl font-montserrat font-normal normal-case tracking-normal opacity-80 mb-2">
+                        <span class="lang lang-pt">Chega de ser apenas mais um software.</span>
+                        <span class="lang lang-es hidden">Basta de ser solo un software más.</span>
+                        <span class="lang lang-en hidden">Stop being just another software.</span>
+                    </span>
+                    <span class="lang lang-pt">Transforme sua marca na <span class="text-[#40CAB1]">Referência do
+                            Mercado.</span></span>
+                    <span class="lang lang-es hidden">Transforme su marca en la <span class="text-[#40CAB1]">Referencia
+                            del Mercado.</span></span>
+                    <span class="lang lang-en hidden">Transform your brand into the <span class="text-[#40CAB1]">Market
+                            Reference.</span></span>
+                </h1>
+                <p class="mt-6 text-lg md:text-xl max-w-3xl mx-auto text-[#ACCDD3]">
+                    <span class="lang lang-pt">Através do nosso ecossistema de conteúdo e mídia, sua empresa ganha a
+                        autoridade necessária para atrair as melhores oportunidades de negócio.</span>
+                    <span class="lang lang-es hidden">A través de nuestro ecosistema de contenido y medios, su empresa
+                        obtiene la autoridad necesaria para atraer las mejores oportunidades de negocio.</span>
+                    <span class="lang lang-en hidden">Through our content and media ecosystem, your company gains the
+                        authority needed to attract the best business opportunities.</span>
+                </p>
+                <a href="#como-funciona"
+                    class="mt-10 inline-block bg-[#40CAB1] text-[#052B43] px-8 py-4 rounded-xl text-lg font-bold hover:bg-opacity-90 transition-all transform hover:scale-105 cta-pulse">
+                    <span class="lang lang-pt">Descubra Como</span>
+                    <span class="lang lang-es hidden">Descubra Cómo</span>
+                    <span class="lang lang-en hidden">Find Out How</span>
+                </a>
+            </div>
+        </section>
+
+        <!-- Social Proof Carousel -->
+        <section class="py-16 bg-[#0B1A26] border-y border-white/5 section-fade-in">
+            <div class="container mx-auto px-6">
+                <h3 class="text-center text-sm font-bold uppercase tracking-widest text-[#ACCDD3] mb-10">
+                    <span class="lang lang-pt">EMPRESAS QUE CONFIAM E CRESCEM CONOSCO</span>
+                    <span class="lang lang-es hidden">EMPRESAS QUE CONFÍAN Y CRECEN CON NOSOTROS</span>
+                    <span class="lang lang-en hidden">COMPANIES THAT TRUST AND GROW WITH US</span>
+                </h3>
+                <div class="text-scroller">
+                    <div class="text-track">
+                        <!-- Names will be injected here by JavaScript -->
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- How it Works -->
+        <section id="como-funciona" class="py-20 md:py-32 section-fade-in">
+            <div class="container mx-auto px-6">
+                <div class="text-center max-w-3xl mx-auto">
+                    <h2 class="text-3xl md:text-5xl font-black text-white uppercase">
+                        <span class="lang lang-pt">A força do ecossistema <span class="text-[#40CAB1]">Portal
+                                ERP</span></span>
+                        <span class="lang lang-es hidden">La fuerza del ecosistema <span class="text-[#40CAB1]">Portal
+                                ERP</span></span>
+                        <span class="lang lang-en hidden">The power of the <span class="text-[#40CAB1]">Portal
+                                ERP</span> ecosystem</span>
+                    </h2>
+                    <p class="mt-4 text-lg text-[#ACCDD3]">
+                        <span class="lang lang-pt">Nossa metodologia transforma a presença digital da sua empresa em uma
+                            máquina de geração de autoridade e negócios, baseada nos 3 pilares do sucesso: o método
+                            Triple AAA.</span>
+                        <span class="lang lang-es hidden">Nuestra metodología transforma la presencia digital de su
+                            empresa en una máquina de generación de autoridad y negocios, basada en los 3 pilares del
+                            éxito: el método Triple AAA.</span>
+                        <span class="lang lang-en hidden">Our methodology transforms your company's digital presence
+                            into an authority and business generation machine, based on the 3 pillars of success: the
+                            Triple AAA method.</span>
+                    </p>
+                </div>
+
+                <div class="mt-16 grid md:grid-cols-3 gap-8 text-center">
+                    <div class="bg-[#052B43] p-8 rounded-2xl border border-white/10 card-glow">
+                        <div
+                            class="h-16 w-16 mx-auto mb-4 flex items-center justify-center bg-[#40CAB1]/10 rounded-full text-[#40CAB1]">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24"
+                                stroke="currentColor" stroke-width="2">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M13 10V3L4 14h7v7l9-11h-7z" />
+                            </svg>
+                        </div>
+                        <h3 class="text-2xl font-bold text-[#40CAB1]"><span class="lang lang-pt">ALCANCE</span><span
+                                class="lang lang-es hidden">ALCANCE</span><span class="lang lang-en hidden">REACH</span>
+                        </h3>
+                        <p class="mt-2 text-[#ACCDD3]">
+                            <span class="lang lang-pt">O 'A' de Alcance garante que sua mensagem chegue a mais de 215
+                                mil profissionais do setor de software todos os meses, posicionando sua marca diante dos
+                                decisores certos.</span>
+                            <span class="lang lang-es hidden">La 'A' de Alcance asegura que su mensaje llegue a más de
+                                215 mil profesionales del sector de software cada mes, posicionando su marca ante los
+                                tomadores de decisiones correctos.</span>
+                            <span class="lang lang-en hidden">The 'A' for Reach ensures your message reaches over
+                                215,000 software industry professionals every month, positioning your brand in front of
+                                the right decision-makers.</span>
+                        </p>
+                    </div>
+                    <div
+                        class="bg-gradient-to-br from-[#052B43] to-[#0c202e] p-8 rounded-2xl border-2 border-[#40CAB1]/50 transform md:scale-110 md:-translate-y-6 shadow-2xl shadow-[#40CAB1]/10 card-glow">
+                        <div
+                            class="h-16 w-16 mx-auto mb-4 flex items-center justify-center bg-[#40CAB1]/10 rounded-full text-[#40CAB1]">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24"
+                                stroke="currentColor" stroke-width="2">
+                                <path stroke-linecap="round" stroke-linejoin="round"
+                                    d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-12v4m-2-2h4m5 6v4m-2-2h4M17 3l4 4M3 17l4 4M17 17l4-4M3 7l4-4" />
+                            </svg>
+                        </div>
+                        <h3 class="text-2xl font-bold text-[#40CAB1]"><span class="lang lang-pt">AUTORIDADE</span><span
+                                class="lang lang-es hidden">AUTORIDAD</span><span
+                                class="lang lang-en hidden">AUTHORITY</span></h3>
+                        <p class="mt-2 text-[#ACCDD3]">
+                            <span class="lang lang-pt">O 'A' de Autoridade constrói sua reputação através de conteúdo de
+                                valor, como artigos e podcasts, que o estabelecem como a referência principal em seu
+                                nicho de mercado.</span>
+                            <span class="lang lang-es hidden">La 'A' de Autoridad construye su reputación a través de
+                                contenido de valor, como artículos y podcasts, que lo establecen como el principal
+                                referente en su nicho de mercado.</span>
+                            <span class="lang lang-en hidden">The 'A' for Authority builds your reputation through
+                                valuable content, such as articles and podcasts, establishing you as the leading
+                                reference in your market niche.</span>
+                        </p>
+                    </div>
+                    <div class="bg-[#052B43] p-8 rounded-2xl border border-white/10 card-glow">
+                        <div
+                            class="h-16 w-16 mx-auto mb-4 flex items-center justify-center bg-[#40CAB1]/10 rounded-full text-[#40CAB1]">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24"
+                                stroke="currentColor" stroke-width="2">
+                                <path stroke-linecap="round" stroke-linejoin="round"
+                                    d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" />
+                            </svg>
+                        </div>
+                        <h3 class="text-2xl font-bold text-[#40CAB1]"><span class="lang lang-pt">ATRAÇÃO</span><span
+                                class="lang lang-es hidden">ATRACCIÓN</span><span
+                                class="lang lang-en hidden">ATTRACTION</span></h3>
+                        <p class="mt-2 text-[#ACCDD3]">
+                            <span class="lang lang-pt">O 'A' de Atração converte visibilidade em negócios, distribuindo
+                                seu conteúdo para mais de 388 mil leads qualificados e gerando oportunidades comerciais
+                                reais.</span>
+                            <span class="lang lang-es hidden">La 'A' de Atracción convierte la visibilidad en negocios,
+                                distribuyendo su contenido a más de 388 mil leads calificados y generando oportunidades
+                                comerciales reales.</span>
+                            <span class="lang lang-en hidden">The 'A' for Attraction converts visibility into business,
+                                distributing your content to over 388,000 qualified leads and generating real commercial
+                                opportunities.</span>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Plans -->
+        <section id="planos" class="py-20 md:py-32 bg-[#052B43] section-fade-in">
+            <div class="container mx-auto px-6">
+                <div class="text-center max-w-3xl mx-auto">
+                    <h2 class="text-3xl md:text-5xl font-black text-white uppercase">
+                        <span class="lang lang-pt">PLANOS FLEXÍVEIS <span class="text-[#40CAB1]">PARA CADA ETAPA DO SEU
+                                NEGÓCIO</span></span>
+                        <span class="lang lang-es hidden">PLANES FLEXIBLES <span class="text-[#40CAB1]">PARA CADA ETAPA
+                                DE SU NEGOCIO</span></span>
+                        <span class="lang lang-en hidden">FLEXIBLE PLANS <span class="text-[#40CAB1]">FOR EVERY STAGE OF
+                                YOUR BUSINESS</span></span>
+                    </h2>
+                    <p class="mt-4 text-lg text-[#ACCDD3]">
+                        <span class="lang lang-pt">Escolha o plano que melhor se adapta às suas metas de crescimento e
+                            visibilidade.</span>
+                        <span class="lang lang-es hidden">Elija el plan que mejor se adapte a sus metas de crecimiento y
+                            visibilidad.</span>
+                        <span class="lang lang-en hidden">Choose the plan that best fits your growth and visibility
+                            goals.</span>
+                    </p>
+                </div>
+
+                <div class="mt-16 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                    <!-- Bronze Plan -->
+                    <div class="border border-white/10 rounded-2xl p-8 flex flex-col bg-[#052B43]/50 card-glow">
+                        <h3 class="text-2xl font-bold text-white">Bronze</h3>
+                        <p class="mt-2 text-sm text-[#ACCDD3]"><span class="lang lang-pt">Ideal para iniciar a
+                                construção de autoridade.</span><span class="lang lang-es hidden">Ideal para iniciar la
+                                construcción de autoridad.</span><span class="lang lang-en hidden">Ideal for starting to
+                                build authority.</span></p>
+                        <div class="my-6">
+                            <span class="text-4xl font-bold text-white">
+                                <span class="lang lang-pt">R$ 385</span>
+                                <span class="lang lang-es hidden">USD 75</span>
+                                <span class="lang lang-en hidden">$75</span>
+                            </span>
+                            <span class="text-[#ACCDD3]"><span class="lang lang-pt">/mês</span><span
+                                    class="lang lang-es hidden">/mes</span><span
+                                    class="lang lang-en hidden">/month</span></span>
+                        </div>
+                        <ul class="space-y-3 text-[#ACCDD3] flex-grow">
+                            <li class="flex items-center"><svg class="w-5 h-5 text-[#40CAB1] mr-2" fill="none"
+                                    stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M5 13l4 4L19 7"></path>
+                                </svg> Mini Site no Portal</li>
+                            <li class="flex items-center"><svg class="w-5 h-5 text-[#40CAB1] mr-2" fill="none"
+                                    stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M5 13l4 4L19 7"></path>
+                                </svg> 1 Publicação Destaque</li>
+                            <li class="flex items-center"><svg class="w-5 h-5 text-[#40CAB1] mr-2" fill="none"
+                                    stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M5 13l4 4L19 7"></path>
+                                </svg> 2 Convites ERP Summit</li>
+                        </ul>
+                        <a href="#contato"
+                            class="mt-8 text-center w-full border border-[#40CAB1] text-[#40CAB1] px-6 py-3 rounded-xl font-bold hover:bg-[#40CAB1] hover:text-[#052B43] transition-colors card-glow">
+                            <span class="lang lang-pt">Consultar</span><span
+                                class="lang lang-es hidden">Consultar</span><span
+                                class="lang lang-en hidden">Inquire</span>
+                        </a>
+                    </div>
+
+                    <!-- Silver Plan -->
+                    <div class="border border-white/10 rounded-2xl p-8 flex flex-col bg-[#052B43]/50 card-glow">
+                        <h3 class="text-2xl font-bold text-white">Silver</h3>
+                        <p class="mt-2 text-sm text-[#ACCDD3]"><span class="lang lang-pt">Para empresas que buscam
+                                acelerar a presença digital.</span><span class="lang lang-es hidden">Para empresas que
+                                buscan acelerar la presencia digital.</span><span class="lang lang-en hidden">For
+                                companies looking to accelerate their digital presence.</span></p>
+                        <div class="my-6">
+                            <span class="text-4xl font-bold text-white">
+                                <span class="lang lang-pt">R$ 760</span>
+                                <span class="lang lang-es hidden">USD 150</span>
+                                <span class="lang lang-en hidden">$150</span>
+                            </span>
+                            <span class="text-[#ACCDD3]"><span class="lang lang-pt">/mês</span><span
+                                    class="lang lang-es hidden">/mes</span><span
+                                    class="lang lang-en hidden">/month</span></span>
+                        </div>
+                        <ul class="space-y-3 text-[#ACCDD3] flex-grow">
+                            <li class="flex items-center"><svg class="w-5 h-5 text-[#40CAB1] mr-2" fill="none"
+                                    stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M5 13l4 4L19 7"></path>
+                                </svg> <strong>Tudo do Bronze +</strong></li>
+                            <li class="flex items-center"><svg class="w-5 h-5 text-[#40CAB1] mr-2" fill="none"
+                                    stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M5 13l4 4L19 7"></path>
+                                </svg> 1 Publieditorial Anual</li>
+                            <li class="flex items-center"><svg class="w-5 h-5 text-[#40CAB1] mr-2" fill="none"
+                                    stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M5 13l4 4L19 7"></path>
+                                </svg> 1 Disparo para Base Anual</li>
+                            <li class="flex items-center"><svg class="w-5 h-5 text-[#40CAB1] mr-2" fill="none"
+                                    stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M5 13l4 4L19 7"></path>
+                                </svg> 3 Convites ERP Summit</li>
+                        </ul>
+                        <a href="#contato"
+                            class="mt-8 text-center w-full border border-[#40CAB1] text-[#40CAB1] px-6 py-3 rounded-xl font-bold hover:bg-[#40CAB1] hover:text-[#052B43] transition-colors card-glow">
+                            <span class="lang lang-pt">Consultar</span><span
+                                class="lang lang-es hidden">Consultar</span><span
+                                class="lang lang-en hidden">Inquire</span>
+                        </a>
+                    </div>
+
+                    <!-- Gold Plan -->
+                    <div
+                        class="border-2 border-[#40CAB1] rounded-2xl p-8 flex flex-col relative overflow-hidden shadow-2xl shadow-[#40CAB1]/20 bg-gradient-to-br from-[#052B43] to-[#0c202e] card-glow">
+                        <div class="absolute top-0 right-0 bg-[#40CAB1] text-[#052B43] px-4 py-1 text-sm font-bold tracking-wider"
+                            style="clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%, 15% 50%);">
+                            <span class="lang lang-pt">POPULAR</span><span
+                                class="lang lang-es hidden">POPULAR</span><span
+                                class="lang lang-en hidden">POPULAR</span>
+                        </div>
+                        <h3 class="text-2xl font-bold text-white">Gold</h3>
+                        <p class="mt-2 text-sm text-[#ACCDD3]"><span class="lang lang-pt">A escolha para se destacar e
+                                gerar demanda consistente.</span><span class="lang lang-es hidden">La elección para
+                                destacar y generar demanda consistente.</span><span class="lang lang-en hidden">The
+                                choice for standing out and generating consistent demand.</span></p>
+                        <div class="my-6">
+                            <span class="text-4xl font-bold text-white">
+                                <span class="lang lang-pt">R$ 2.200</span>
+                                <span class="lang lang-es hidden">USD 400</span>
+                                <span class="lang lang-en hidden">$400</span>
+                            </span>
+                            <span class="text-[#ACCDD3]"><span class="lang lang-pt">/mês</span><span
+                                    class="lang lang-es hidden">/mes</span><span
+                                    class="lang lang-en hidden">/month</span></span>
+                        </div>
+                        <ul class="space-y-3 text-[#ACCDD3] flex-grow">
+                            <li class="flex items-center"><svg class="w-5 h-5 text-[#40CAB1] mr-2" fill="none"
+                                    stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M5 13l4 4L19 7"></path>
+                                </svg> <strong>Tudo do Silver +</strong></li>
+                            <li class="flex items-center"><svg class="w-5 h-5 text-[#40CAB1] mr-2" fill="none"
+                                    stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M5 13l4 4L19 7"></path>
+                                </svg> 2 Publieditoriais Anuais</li>
+                            <li class="flex items-center"><svg class="w-5 h-5 text-[#40CAB1] mr-2" fill="none"
+                                    stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M5 13l4 4L19 7"></path>
+                                </svg> 1 Podcast Anual</li>
+                            <li class="flex items-center"><svg class="w-5 h-5 text-[#40CAB1] mr-2" fill="none"
+                                    stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M5 13l4 4L19 7"></path>
+                                </svg> Banner Interno</li>
+                        </ul>
+                        <a href="#contato"
+                            class="mt-8 text-center w-full bg-[#40CAB1] text-[#052B43] px-6 py-3 rounded-xl font-bold hover:bg-opacity-90 transition-all card-glow">
+                            <span class="lang lang-pt">Consultar</span><span
+                                class="lang lang-es hidden">Consultar</span><span
+                                class="lang lang-en hidden">Inquire</span>
+                        </a>
+                    </div>
+
+                    <!-- Platinum Plan -->
+                    <div class="border border-white/10 rounded-2xl p-8 flex flex-col bg-[#052B43]/50 card-glow">
+                        <h3 class="text-2xl font-bold text-white">Platinum</h3>
+                        <p class="mt-2 text-sm text-[#ACCDD3]"><span class="lang lang-pt">Visibilidade máxima para
+                                dominar o mercado.</span><span class="lang lang-es hidden">Visibilidad máxima para
+                                dominar el mercado.</span><span class="lang lang-en hidden">Maximum visibility to
+                                dominate the market.</span></p>
+                        <div class="my-6">
+                            <span class="text-4xl font-bold text-white">
+                                <span class="lang lang-pt">R$ 4.000</span>
+                                <span class="lang lang-es hidden">USD 800</span>
+                                <span class="lang lang-en hidden">$800</span>
+                            </span>
+                            <span class="text-[#ACCDD3]"><span class="lang lang-pt">/mês</span><span
+                                    class="lang lang-es hidden">/mes</span><span
+                                    class="lang lang-en hidden">/month</span></span>
+                        </div>
+                        <ul class="space-y-3 text-[#ACCDD3] flex-grow">
+                            <li class="flex items-center"><svg class="w-5 h-5 text-[#40CAB1] mr-2" fill="none"
+                                    stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M5 13l4 4L19 7"></path>
+                                </svg> <strong>Tudo do Gold +</strong></li>
+                            <li class="flex items-center"><svg class="w-5 h-5 text-[#40CAB1] mr-2" fill="none"
+                                    stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M5 13l4 4L19 7"></path>
+                                </svg> 3 Publieditoriais Anuais</li>
+                            <li class="flex items-center"><svg class="w-5 h-5 text-[#40CAB1] mr-2" fill="none"
+                                    stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M5 13l4 4L19 7"></path>
+                                </svg> Banner na Home Page</li>
+                            <li class="flex items-center"><svg class="w-5 h-5 text-[#40CAB1] mr-2" fill="none"
+                                    stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M5 13l4 4L19 7"></path>
+                                </svg> Descontos Exclusivos</li>
+                        </ul>
+                        <a href="#contato"
+                            class="mt-8 text-center w-full border border-[#40CAB1] text-[#40CAB1] px-6 py-3 rounded-xl font-bold hover:bg-[#40CAB1] hover:text-[#052B43] transition-colors card-glow">
+                            <span class="lang lang-pt">Consultar</span><span
+                                class="lang lang-es hidden">Consultar</span><span
+                                class="lang lang-en hidden">Inquire</span>
+                        </a>
+                    </div>
+                </div>
+                <p class="text-center text-sm text-[#ACCDD3] mt-8"><span class="lang lang-pt">*Planos superiores
+                        (Diamond, Sapphire, Global) disponíveis sob consulta.</span><span
+                        class="lang lang-es hidden">*Planes superiores (Diamond, Sapphire, Global) disponibles bajo
+                        consulta.</span><span class="lang lang-en hidden">*Higher tiers (Diamond, Sapphire, Global)
+                        available upon consultation.</span></p>
+
+            </div>
+        </section>
+
+        <!-- Cases Section -->
+        <section id="cases" class="py-20 md:py-32 section-fade-in">
+            <div class="container mx-auto px-6">
+                <div class="text-center max-w-3xl mx-auto">
+                    <h2 class="text-3xl md:text-5xl font-black text-white uppercase">
+                        <span class="text-[#40CAB1]"><span class="lang lang-pt">Resultados que falam por si</span><span
+                                class="lang lang-es hidden">Resultados que hablan por sí mismos</span><span
+                                class="lang lang-en hidden">Results that speak for themselves</span></span>
+                    </h2>
+                    <p class="mt-4 text-lg text-[#ACCDD3]">
+                        <span class="lang lang-pt">Veja como nossos membros Diamond estão expandindo seu alcance e
+                            fortalecendo sua marca.</span>
+                        <span class="lang lang-es hidden">Vea cómo nuestros miembros Diamond están expandiendo su
+                            alcance y fortaleciendo su marca.</span>
+                        <span class="lang lang-en hidden">See how our Diamond members are expanding their reach and
+                            strengthening their brand.</span>
+                    </p>
+                </div>
+                <div class="mt-16 grid lg:grid-cols-2 gap-12 items-center">
+                    <div class="bg-[#052B43] p-8 rounded-2xl border border-white/10 card-glow">
+                        <img src="https://placehold.co/200x60/FFFFFF/052B43?text=Senior+Sistemas&font=montserrat"
+                            alt="Logo Senior Sistemas" class="h-10 mb-6">
+                        <blockquote class="text-lg italic text-white border-l-4 border-[#40CAB1] pl-6">
+                            "<span class="lang lang-pt">O Programa de Membros nos deu uma plataforma incomparável para
+                                alcançar nosso público-alvo e solidificar nossa posição como líderes em tecnologia para
+                                gestão. Os resultados em visibilidade e geração de leads superaram nossas
+                                expectativas.</span><span class="lang lang-es hidden">El Programa de Miembros nos ha
+                                dado una plataforma incomparable para llegar a nuestro público objetivo y consolidar
+                                nuestra posición como líderes en tecnología de gestión. Los resultados en visibilidad y
+                                generación de leads han superado nuestras expectativas.</span><span
+                                class="lang lang-en hidden">The Members Program has given us an unparalleled platform to
+                                reach our target audience and solidify our position as leaders in management technology.
+                                The results in visibility and lead generation have exceeded our expectations.</span>"
+                        </blockquote>
+                        <div class="mt-8 flex justify-around text-center">
+                            <div>
+                                <p class="text-4xl font-bold text-[#40CAB1]">5.2M+</p>
+                                <p class="text-sm text-[#ACCDD3] uppercase tracking-wider"><span
+                                        class="lang lang-pt">Impressões</span><span
+                                        class="lang lang-es hidden">Impresiones</span><span
+                                        class="lang lang-en hidden">Impressions</span></p>
+                            </div>
+                            <div>
+                                <p class="text-4xl font-bold text-[#40CAB1]">28k+</p>
+                                <p class="text-sm text-[#ACCDD3] uppercase tracking-wider">Cliques</p>
+                            </div>
+                        </div>
+                        <p class="text-center text-xs text-[#ACCDD3] mt-4"><span class="lang lang-pt">(Resultados em 3
+                                meses)</span><span class="lang lang-es hidden">(Resultados en 3 meses)</span><span
+                                class="lang lang-en hidden">(Results in 3 months)</span></p>
+                    </div>
+                    <div class="bg-[#052B43] p-8 rounded-2xl border border-white/10 card-glow">
+                        <img src="https://placehold.co/200x60/FFFFFF/052B43?text=Epicor&font=montserrat"
+                            alt="Logo Epicor" class="h-10 mb-6">
+                        <blockquote class="text-lg italic text-white border-l-4 border-[#40CAB1] pl-6">
+                            "<span class="lang lang-pt">Fazer parte do ecossistema Portal ERP foi estratégico para nossa
+                                expansão na América Latina. O conteúdo de alta qualidade e a distribuição direcionada
+                                nos conectaram com os decisores certos, acelerando nosso ciclo de vendas.</span><span
+                                class="lang lang-es hidden">Ser parte del ecosistema del Portal ERP fue estratégico para
+                                nuestra expansión en América Latina. El contenido de alta calidad y la distribución
+                                dirigida nos conectaron con los tomadores de decisiones correctos, acelerando nuestro
+                                ciclo de ventas.</span><span class="lang lang-en hidden">Being part of the Portal ERP
+                                ecosystem was strategic for our expansion in Latin America. The high-quality content and
+                                targeted distribution connected us with the right decision-makers, accelerating our
+                                sales cycle.</span>"
+                        </blockquote>
+                        <div class="mt-8 flex justify-around text-center">
+                            <div>
+                                <p class="text-4xl font-bold text-[#40CAB1]">379k+</p>
+                                <p class="text-sm text-[#ACCDD3] uppercase tracking-wider"><span
+                                        class="lang lang-pt">Impressões</span><span
+                                        class="lang lang-es hidden">Impresiones</span><span
+                                        class="lang lang-en hidden">Impressions</span></p>
+                            </div>
+                            <div>
+                                <p class="text-4xl font-bold text-[#40CAB1]">4k+</p>
+                                <p class="text-sm text-[#ACCDD3] uppercase tracking-wider">Cliques</p>
+                            </div>
+                        </div>
+                        <p class="text-center text-xs text-[#ACCDD3] mt-4"><span class="lang lang-pt">(Resultados em 3
+                                meses)</span><span class="lang lang-es hidden">(Resultados en 3 meses)</span><span
+                                class="lang lang-en hidden">(Results in 3 months)</span></p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contato" class="py-20 md:py-32 bg-[#052B43] section-fade-in">
+            <div class="container mx-auto px-6">
+                <div class="lg:grid lg:grid-cols-2 lg:gap-16 items-center">
+                    <div>
+                        <h2 class="text-3xl md:text-5xl font-black text-white uppercase">
+                            <span class="lang lang-pt">Vamos construir sua <span class="text-[#40CAB1]">Autoridade no
+                                    Mercado</span>?</span>
+                            <span class="lang lang-es hidden">¿Construimos juntos su <span
+                                    class="text-[#40CAB1]">Autoridad en el Mercado</span>?</span>
+                            <span class="lang lang-en hidden">Let's build your <span class="text-[#40CAB1]">Market
+                                    Authority</span> together?</span>
+                        </h2>
+                        <p class="mt-4 text-lg text-[#ACCDD3]">
+                            <span class="lang lang-pt">Preencha o formulário e um de nossos especialistas entrará em
+                                contato para entender seu momento e desenhar um plano de crescimento customizado para
+                                sua empresa.</span>
+                            <span class="lang lang-es hidden">Complete el formulario y uno de nuestros especialistas se
+                                pondrá en contacto para entender su momento y diseñar un plan de crecimiento
+                                personalizado para su empresa.</span>
+                            <span class="lang lang-en hidden">Fill out the form and one of our specialists will contact
+                                you to understand your needs and design a customized growth plan for your
+                                company.</span>
+                        </p>
+                        <div class="mt-8 text-lg text-[#ACCDD3]">
+                            <p class="font-bold text-white"><span class="lang lang-pt">Ou fale conosco
+                                    diretamente:</span><span class="lang lang-es hidden">O contáctenos
+                                    directamente:</span><span class="lang lang-en hidden">Or contact us directly:</span>
+                            </p>
+                            <p><strong>Email:</strong> dama.roman@portalerp.com</p>
+                            <p><strong><span class="lang lang-pt">Telefone</span><span
+                                        class="lang lang-es hidden">Teléfono</span><span
+                                        class="lang lang-en hidden">Phone</span>:</strong> +55 11 2660-2876</p>
+                        </div>
+                    </div>
+                    <div class="mt-10 lg:mt-0">
+                        <form action="#" method="POST" class="space-y-6">
+                            <div>
+                                <label for="name" class="sr-only"><span class="lang lang-pt">Nome</span><span
+                                        class="lang lang-es hidden">Nombre</span><span
+                                        class="lang lang-en hidden">Name</span></label>
+                                <input type="text" name="name" id="name" autocomplete="name"
+                                    class="w-full bg-[#0B1A26] border border-white/20 rounded-xl px-4 py-3 text-white focus:ring-[#40CAB1] focus:border-[#40CAB1] transition-all"
+                                    placeholder-pt="Seu nome" placeholder-es="Su nombre" placeholder-en="Your name">
+                            </div>
+                            <div>
+                                <label for="company" class="sr-only"><span class="lang lang-pt">Empresa</span><span
+                                        class="lang lang-es hidden">Empresa</span><span
+                                        class="lang lang-en hidden">Company</span></label>
+                                <input type="text" name="company" id="company" autocomplete="organization"
+                                    class="w-full bg-[#0B1A26] border border-white/20 rounded-xl px-4 py-3 text-white focus:ring-[#40CAB1] focus:border-[#40CAB1] transition-all"
+                                    placeholder-pt="Nome da sua empresa" placeholder-es="Nombre de su empresa"
+                                    placeholder-en="Your company name">
+                            </div>
+                            <div>
+                                <label for="email" class="sr-only">Email</label>
+                                <input type="email" name="email" id="email" autocomplete="email"
+                                    class="w-full bg-[#0B1A26] border border-white/20 rounded-xl px-4 py-3 text-white focus:ring-[#40CAB1] focus:border-[#40CAB1] transition-all"
+                                    placeholder-pt="Seu e-mail profissional"
+                                    placeholder-es="Su correo electrónico profesional" placeholder-en="Your work email">
+                            </div>
+                            <div>
+                                <label for="message" class="sr-only"><span class="lang lang-pt">Mensagem</span><span
+                                        class="lang lang-es hidden">Mensaje</span><span
+                                        class="lang lang-en hidden">Message</span></label>
+                                <textarea name="message" id="message" rows="4"
+                                    class="w-full bg-[#0B1A26] border border-white/20 rounded-xl px-4 py-3 text-white focus:ring-[#40CAB1] focus:border-[#40CAB1] transition-all"
+                                    placeholder-pt="Conte-nos sobre seu desafio..."
+                                    placeholder-es="Cuéntenos sobre su desafío..."
+                                    placeholder-en="Tell us about your challenge..."></textarea>
+                            </div>
+                            <div>
+                                <button type="submit"
+                                    class="w-full bg-[#40CAB1] text-[#052B43] px-8 py-4 rounded-xl text-lg font-bold hover:bg-opacity-90 transition-all card-glow">
+                                    <span class="lang lang-pt">Enviar Solicitação</span>
+                                    <span class="lang lang-es hidden">Enviar Solicitud</span>
+                                    <span class="lang lang-en hidden">Send Request</span>
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-[#0B1A26] border-t border-white/10">
+        <div class="container mx-auto px-6 py-8 text-center text-[#ACCDD3]">
+            <div class="flex justify-center items-center space-x-3 mb-4">
+                <img src="https://email-editor-production.s3.amazonaws.com/images/3216/editor_images/Logo_Portal_ERP_5.png"
+                    alt="Portal ERP Logo" class="h-7 w-auto opacity-70">
+            </div>
+            <p>&copy; 2025 Portal ERP. <span class="lang lang-pt">Todos os direitos reservados.</span><span
+                    class="lang lang-es hidden">Todos los derechos reservados.</span><span
+                    class="lang lang-en hidden">All rights reserved.</span></p>
+        </div>
+    </footer>
+
+    <script src="./js/index.js"></script>
+</body>
+
+</html>
